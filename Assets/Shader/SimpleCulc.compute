@@ -1,0 +1,20 @@
+﻿/*
+ComputeShaderのTemplate
+ComputeShaerの実行回数は多めでとっておいてinstance数を監視して
+スレッドの実行回数を制御する
+*/
+#pragma kernel MainCulc
+
+Texture2D<float3>positionRenderTexture;
+RWStructuredBuffer<float3> positionBuffer;
+int instanceNum;
+
+[numthreads(8, 1, 1)]
+void MainCulc(uint3 id : SV_DispatchThreadID)
+{
+	if (id.x < instanceNum) {
+		int index = (int)id.x;
+		float3 p = positionRenderTexture[int2(index, 0)];
+		positionBuffer[id.x] = p;
+	}
+}
