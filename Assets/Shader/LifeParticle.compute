@@ -49,7 +49,7 @@ RWStructuredBuffer<float3> positionBuffer;
 RWStructuredBuffer<Params> buffer;
 float2 times;	//deltaTime, timer
 int instanceNum;
-[numthreads(128, 1, 1)]
+[numthreads(8, 1, 1)]
 void MainCulc(uint id : SV_DispatchThreadID)
 {
 	if (id < (uint)instanceNum) {
@@ -72,7 +72,7 @@ void MainCulc(uint id : SV_DispatchThreadID)
 			else {
 				float3 pos = positionBuffer[id];
 				//pos += float3(0.0, 0.05, 0.0);
-				pos += curlNoise(float4(pos, times.y)) * 0.01;
+				pos += curlNoise(float4(pos, times.y)) * 0.05;
 				positionBuffer[id] = pos;
 				
 				//size減少

@@ -1,0 +1,29 @@
+﻿/*
+ComputeShaderのTemplate
+ComputeShaerの実行回数は多めでとっておいてinstance数を監視して
+スレッドの実行回数を制御する
+*/
+#pragma kernel MainCulc
+#include "utils.hlsl"
+
+Texture2D<float3>positionRenderTexture;
+Texture2D<float3>normalRenderTexture;
+RWStructuredBuffer<float3> positionBuffer;
+RWStructuredBuffer<float3> axisBuffer;
+RWStructuredBuffer<float> rotateBuffer;
+int instanceNum;
+
+[numthreads(64, 1, 1)]
+void MainCulc(uint id : SV_DispatchThreadID)
+{
+	if (id < (uint)instanceNum) {
+		float3 p = positionRenderTexture[int2(id, 0)];
+		float3 dir = normalRenderTexture[int2(id, 0)];
+		float3 forward = float3(0.0, 0.0, -1.0);
+		dir = normalize(dir);
+		axisBuffer[id] = normalize(cross(forward, dir));
+		rotateBuffer[id] = acos(dot(dir, forward));
+		positionBuffer[id] = p;
+
+	}
+}

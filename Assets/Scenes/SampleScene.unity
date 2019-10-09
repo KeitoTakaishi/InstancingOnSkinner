@@ -446,6 +446,7 @@ GameObject:
   - component: {fileID: 715689435}
   - component: {fileID: 715689434}
   - component: {fileID: 715689436}
+  - component: {fileID: 715689437}
   m_Layer: 0
   m_Name: MeshDrawer
   m_TagString: Untagged
@@ -504,6 +505,26 @@ MonoBehaviour:
   lives:
   - minLife: 0.1
     maxLife: 0.8
+  sizes:
+  - minSize: 0.05
+    maxSize: 0.1
+--- !u!114 &715689437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715689433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062c1a7c0de5e30448f3febe9964accc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mesh: {fileID: 3613567641014311022, guid: 2fe3294a86286c74ca32f8bca2c74632, type: 3}
+  material: {fileID: 2100000, guid: 5bf18e2b79ed8704c8d1719b148e7d25, type: 2}
+  emitterModel: {fileID: 230407997}
+  cam: {fileID: 963194225}
+  cs: {fileID: 7200000, guid: 74df1037260842d4cb3e899137a148fb, type: 3}
 --- !u!1 &810741609
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +600,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 940963095}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -914,20 +935,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 427d34d6970bfe74f99a26b6745ccbc5, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 427d34d6970bfe74f99a26b6745ccbc5, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 100048, guid: 427d34d6970bfe74f99a26b6745ccbc5, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 427d34d6970bfe74f99a26b6745ccbc5, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 994fb69d8a342e2459e41d5ffce1e483, type: 2}
     - target: {fileID: 400002, guid: 427d34d6970bfe74f99a26b6745ccbc5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -972,6 +989,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 427d34d6970bfe74f99a26b6745ccbc5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 994fb69d8a342e2459e41d5ffce1e483, type: 2}
     - target: {fileID: 9500000, guid: 427d34d6970bfe74f99a26b6745ccbc5, type: 3}
       propertyPath: m_Controller
       value: 

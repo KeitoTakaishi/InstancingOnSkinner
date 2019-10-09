@@ -23,7 +23,7 @@ public class AttributeBaker : MonoBehaviour
     private Camera subCam;
     #endregion
 
-    
+    public bool isDebug = false;
 
     #region Accesor
     public RenderTexture[] MrtTexturees
@@ -63,7 +63,7 @@ public class AttributeBaker : MonoBehaviour
         subCam.clearFlags = CameraClearFlags.SolidColor;
         subCam.depth = -1000;
         subCam.renderingPath = RenderingPath.Forward;
-        //subCam.cullingMask = 1 << LayerMask.NameToLayer("Bake");
+        subCam.cullingMask = 1 << LayerMask.NameToLayer("Bake");
         subCam.nearClipPlane = -10;
         subCam.farClipPlane = 100;
         subCam.orthographic = true;
@@ -114,7 +114,10 @@ public class AttributeBaker : MonoBehaviour
                 Debug.Log(i);
             }
         }*/
-        GUI.DrawTexture(new Rect(0, 0, 300, 30), renderTexture[0]);
-        GUI.DrawTexture(new Rect(0, 60, 300, 30), renderTexture[1]);
+        if(isDebug)
+        {
+            GUI.DrawTexture(new Rect(0, 0, 300, 30), renderTexture[0]);
+            GUI.DrawTexture(new Rect(0, 60, 300, 30), renderTexture[1]);
+        }
     }
 }

@@ -66,10 +66,13 @@
     <Compile Include="Assets\Scripts\CameraAnimation.cs" />
     <Compile Include="Assets\Scripts\InstacingParticle.cs" />
     <Compile Include="Assets\Scripts\InstacingTempate.cs" />
+    <Compile Include="Assets\Scripts\InstancingHair.cs" />
     <Compile Include="Assets\Scripts\MeshPreProcessor.cs" />
     <Compile Include="Assets\Scripts\TextureVirewer.cs" />
     <None Include="Assets\Shader\noise4d.cginc" />
     <None Include="Assets\CMUMocap\Acknowledgement.txt" />
+    <None Include="Assets\Shader\InstancingHair.shader" />
+    <None Include="Assets\Shader\Hair.compute" />
     <None Include="Assets\Shader\SimpleInstancing.shader" />
     <None Include="Assets\Shader\InstancingParticle.shader" />
     <None Include="Assets\Shader\Placeholder.shader" />
@@ -95,20 +98,20 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/takai/Documents/UnityProjects/InstancingOnSkinner/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>C:/Users/takai/Documents/UnityProjects/InstancingOnSkinner/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:/Users/takai/Documents/UnityProjects/InstancingOnSkinner/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>C:/Users/takai/Documents/UnityProjects/InstancingOnSkinner/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/takai/Documents/UnityProjects/InstancingOnSkinner/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/takai/Documents/UnityProjects/InstancingOnSkinner/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>C:/Users/takai/Documents/UnityProjects/InstancingOnSkinner/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>C:/Users/takai/Documents/UnityProjects/InstancingOnSkinner/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

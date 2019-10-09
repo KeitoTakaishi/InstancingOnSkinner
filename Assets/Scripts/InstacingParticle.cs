@@ -26,6 +26,15 @@ public class InstacingParticle : MonoBehaviour
         public float maxLife;
     }
 
+    [Serializable]
+    public struct Sizes
+    {
+        [Range(0f, 60f)]
+        public float minSize;
+        [Range(0f, 60f)]
+        public float maxSize;
+    }
+
     #region private Data
     [SerializeField] Mesh mesh;
     [SerializeField] Material material;
@@ -43,7 +52,8 @@ public class InstacingParticle : MonoBehaviour
 
     #region ComputeShader uniform 
     [SerializeField] List<Lives> lives = new List<Lives>();
-    //[Serializable] [Range(0.1f,)] 
+    [SerializeField] List<Sizes> sizes = new List<Sizes>();
+    
     private float timer;
     #endregion
 
@@ -76,8 +86,8 @@ public class InstacingParticle : MonoBehaviour
         for(int i = 0; i < instanceCount; i++)
         {
             var life = lives[UnityEngine.Random.Range(0, lives.Count)]; //inspectorで保存された値の中から探索
-            var size =UnityEngine.Random.Range(0.01f, 0.075f);
-            parameters[i] = new Params(UnityEngine.Random.Range(life.minLife, life.maxLife), size);
+            var size = sizes[UnityEngine.Random.Range(0, sizes.Count)];
+            parameters[i] = new Params(UnityEngine.Random.Range(life.minLife, life.maxLife), UnityEngine.Random.Range(size.minSize, size.maxSize));
         }
         paramsBuffer.SetData(parameters);
 
